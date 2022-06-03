@@ -1,0 +1,248 @@
+:root{
+    --red: #BE3144;
+    --white: #FFFFFF;
+    --black: #000000;
+    --whiteg: #0f0f0f;
+    --blue: #45567D;
+    --gray: #303841;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.nav{
+    min-height: 70px;
+    width: 100%;
+    background-color: var(--red);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+.nav a{
+    text-decoration: none;
+    color: var(--white);
+    padding: 0 1.5vw 0 1.5vw;
+    font-size: 22px;
+}
+
+#welcome-section{
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(62deg,
+    rgb(58, 61, 64),
+    var(--whiteg),
+    var(--black)
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#welcome-section h1, #welcome-section p{
+    margin-top: 70px;
+}
+
+
+
+h1{
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 84px;
+    color: var(--white);
+    display: block;
+    word-spacing: 0;
+    text-align: center;
+}
+
+#welcome-section p{
+    font-family: Poppins, sans-serif;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 200;
+    line-height: 42px;
+    display: block;
+    color: var(--red);
+    word-spacing: 0;
+    margin-top: auto;
+}
+
+
+#projects{
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#projects > h2{
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+    text-decoration: underline;
+    padding: 20px;
+    margin: 10px;
+    color: var(--white)
+}
+
+.project-image{
+    width: 400px;
+    height: 400px;
+    background-color: aliceblue;
+    object-fit: cover;
+}
+
+.projectss{
+    width: 75%; 
+    display: flex;
+    overflow: auto;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-height: 150vh;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px 100px 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 70px;
+}
+
+.projectss p{
+    font-size: 20px;
+    line-height: 28px;
+    padding: 20px 5px 20px 5px;
+    width: 390px;
+    text-align: center;
+    background-color: var(--gray);
+    color: var(--white);
+    margin-bottom: 5vh;
+    
+}
+
+.tile-link{
+    text-decoration: none;
+    margin: auto;
+}
+
+.btn{
+    padding: 20px;
+    background-color: var(--gray);
+    text-decoration: none;
+    color: var(--white);    
+    text-align: center;
+}
+
+.button{
+    margin-bottom: 5vh;
+    min-height: 48px;
+    width: 10vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.contact-section{
+    min-height: 80vh;
+    background-color: var(--gray);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70px;
+    
+}
+
+.contact-section p{
+    text-align: center;
+}
+
+.contact-links{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.contact-details{
+    padding: 0 2vh 0 2vh;    
+}
+
+i > p{
+    padding-left: 20px;
+}
+
+label{
+    padding-left: 1px;
+    margin-left: 0.1vh;
+    margin-right: 1vh;
+    font-size: 24px;
+}
+
+i{
+    font-size: 24px;
+    font-weight: 900;
+    
+}
+
+.contact-section > h2{
+    text-align: center;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 58px;
+    text-decoration: none;
+    padding: 20px;
+    margin: 10px;
+    color: var(--white)
+}
+
+.coffe{
+    font-family: Poppins, sans-serif;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 300;
+    letter-spacing: 1px;
+    word-spacing: 0.1vh;
+    text-decoration: none solid rgb(240, 240, 240);
+}
+
+
+footer{
+    min-height: 10vh;
+    background-color: var(--gray);
+    border-top: 4px var(--red) solid;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    color: var(--white);
+    font-family: Poppins, sans-serif;
+    font-size: 18px;
+    padding: 0 1vh 0 1vh;
+    font-weight: 300;
+    word-spacing: 0.1vh;
+}
+
+
+@media (max-width: 580px){
+    .nav{
+        justify-content: center;
+    }
+    .nav > a {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
