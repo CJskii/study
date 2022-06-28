@@ -1,3 +1,9 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: 'Courier New', Courier, monospace;
   display: flex;
@@ -7,7 +13,7 @@ body {
 img {
   width: 100px;
   height: 100px;
-  margin-bottom: 5px;
+  margin: auto;
 }
 
 .title {
@@ -39,19 +45,16 @@ img {
 .container{
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   width: 200px;
   height: 200px;
   margin-right: 52px;
   margin-left: 52px;
+  gap: 5px;
 }
 
 .text{
   text-align: center;
   padding: 2px;
-  
-}
-
-.three{
-  margin: 20px;
 }
