@@ -19,3 +19,17 @@ h3.textContent = "Hey I'm blue"
 
 container.appendChild(h3);
 
+
+
+const divider = document.createElement('div');
+divider.style.cssText = 'background: pink; border: 1px solid black'
+
+const head = document.createElement('h1');
+head.textContent = "I'm in a div"
+
+const para = document.createElement('p')
+para.textContent = "ME TOO!"
+
+divider.appendChild(head);
+divider.appendChild(para);
+container.appendChild(divider);
