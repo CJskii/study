@@ -5,4 +5,16 @@ let user = {
 
 user.Name = "Pete"
 delete user.Name
-console.log(user)
+
+let schedule = {
+    Today: "John",
+    Tomorrow: "Smith"
+};
+
+function isEmpty(){
+    for (let key in schedule){
+        return false;
+} 
+return true;
+}
+
