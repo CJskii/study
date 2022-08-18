@@ -1,13 +1,145 @@
+@font-face {
+    font-family: 'Orbit';
+    src: url('/assets/Orbitron-VariableFont_wght.ttf');
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 24px;
+    font-family: 'Orbit', sans-serif;
+}
+
+html{
+    margin:0;
+    padding:0;
+    max-height:100vh;
+    overflow:hidden;
 }
 
 .full-height{
-    height: 100vh;
+    min-height: 100vh;
 }
+
+/* CONTENT */
 
 .content-wrapper{
     background-color: bisque;
+    display: flex;
+}
+
+.image-container{
+    width: 40vw;
+    height: inherit;
+    background-image: url(./assets/monkey-upscaled.jpg);
+    background-size: cover;
+    background-position:  right 35% top 25%;
+}
+
+.form-wrapper{
+    width: 60vw;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    background: rgb(53,44,71);
+    background: linear-gradient(155deg, rgb(41, 20, 78) 0%, rgb(6, 1, 26) 50%, rgb(6, 2, 22) 100%);
+}
+
+/* TEXT */
+.text-container{
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 1px solid rgb(214, 150, 150);
+}
+
+p{
+    max-width: 70%;
+    padding: .5rem .9rem;
+    font-size: 0.8rem;
+    color: white
+}
+
+.p-container:first-child{
+    color: aqua;
+}
+
+.remote-text{
+    margin-top: .5rem;
+}
+
+/*FORM*/
+
+.form-container{
+    height: 40%;
+    border: 1px solid rgb(214, 150, 150);
+}
+
+form{
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.row1, .row2, .row3{
+    width: 80%;
+    border: 1px red solid;
+    margin: 0.8rem;
+    padding: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+}
+
+
+.input-wrapper{
+    display: flex;
+    flex-direction: column;
+    border: 1px blue solid;
+    width: 40%;
+}
+
+legend{
+    font-size: 0.8rem;
+}
+
+label{
+    font-size: 0.6rem;
+}
+
+/*SUBMIT*/
+
+.button-container{
+    height: 30%;
+    border: 1px solid rgb(214, 150, 150);
+}
+
+.button-container > p{
+    font-size: 0.6rem;
+}
+
+a{
+    font-size: 0.6rem;
+    padding: .2rem;
+    color: gold;
+}
+
+button{
+    padding: .5rem;
+    margin: .8rem 0 0 0.8rem;
+    font-size: .8rem;
+    border-radius: 10px;
+    border: hidden;
+}
+/* MEDIA QUERY */
+
+@media (max-width:768px) {
+    p{
+        max-width: 100%;
+    }
 }
