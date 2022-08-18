@@ -37,6 +37,43 @@ html{
     background-image: url(./assets/monkey-upscaled.jpg);
     background-size: cover;
     background-position:  right 35% top 25%;
+    position: relative;
+}
+
+.image-text{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.575);
+    width: 100%;
+    height: 29.2%;
+    text-align: center;
+    top: 0;
+    font-size: 2rem;
+    color: rgb(168, 146, 17);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px rgba(255, 217, 0, 0.452) solid;;
+}
+
+.image-dim{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(137, 43, 226, 0.185);
+}
+
+.image-caption{
+    position: absolute;
+    width: 100%;
+    height: 19.5%;
+    background-color: rgba(0, 0, 0, 0.575);
+    color: rgb(168, 146, 17);
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .8rem;
+    border-top: 1px rgba(255, 217, 0, 0.452) solid;;
 }
 
 .form-wrapper{
@@ -58,7 +95,7 @@ html{
 
 .p-container > p , .remote-text{
     display: block;
-    max-width: 60%;
+    max-width: 70%;
     padding: .5rem .9rem;
     margin: 0 1rem;
     font-size: 0.7rem;
@@ -66,7 +103,7 @@ html{
 }
 
 .remote-text{
-    letter-spacing: .4rem;
+    letter-spacing: .1rem;
     padding: 1rem
 }
 
@@ -178,5 +215,15 @@ button{
     }
     .p-container > p{
         font-size: .6rem;
+    }
+    .image-text{
+        top: 0;
+        height: 26.6%;
+        line-height: 3rem;
+        font-size: 1.3rem;
+    }
+    .image-caption{
+        height: 17.8%;
+        font-size: .7rem;
     }
 }
