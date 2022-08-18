@@ -65,7 +65,7 @@ html{
 .image-caption{
     position: absolute;
     width: 100%;
-    height: 19.8%;
+    height: 19.6%;
     background-color: rgba(0, 0, 0, 0.575);
     color: rgb(168, 146, 17);
     bottom: 0;
@@ -111,7 +111,7 @@ html{
 /*FORM*/
 
 .form-container{
-    max-height: 100%;
+    min-height: 51vh;
     padding: 1rem;
     border-top: 1px rgba(255, 217, 0, 0.452) solid;
     border-bottom: 1px rgba(255, 217, 0, 0.452) solid;
@@ -132,8 +132,8 @@ form{
 }
 
 .row1, .row2, .row3{
-    margin: 0.8rem;
-    padding: 0.6rem;
+    margin: 0.3rem;
+    padding: 1rem 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -150,7 +150,7 @@ form{
 }
 
 legend{
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     margin: .1rem 1rem;
 }
 
@@ -189,7 +189,7 @@ input[type=email]:focus,
 input[type=tel]:focus {
     outline: none !important;
     border:1px solid rgba(255, 217, 0, 0.76);
-    box-shadow: 0 0 15px #4d285c;
+    box-shadow: 0 0 25px rgba(109, 29, 112, 0.5);
   }
 
 
@@ -210,7 +210,11 @@ input[type=tel]:focus {
 a{
     font-size: 0.6rem;
     padding: .2rem;
-    color: gold;
+    color: rgba(255, 217, 0, 0.658);
+}
+
+a:hover{
+    color:gold;
 }
 
 button{
@@ -219,6 +223,11 @@ button{
     font-size: .8rem;
     border-radius: 10px;
     background-color: transparent;
+    color: rgb(142, 19, 146);
+    border: 1px rgb(142, 19, 146) solid;
+}
+
+button:hover{
     color: rgb(235, 40, 241);
     border: 1px rgb(235, 40, 241) solid;
 }
@@ -239,7 +248,7 @@ button{
     }
     .image-text{
         top: 0;
-        height: 26.9%;
+        height: 25.1%;
         line-height: 3rem;
         font-size: 1.3rem;
     }
@@ -247,4 +256,11 @@ button{
         height: 18%;
         font-size: .7rem;
     }
+    .form-container{
+        min-height: 57.1vh;
+    }
+    .text-container{
+        min-height: 25vh;
+    }
+
 }
