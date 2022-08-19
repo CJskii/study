@@ -196,7 +196,13 @@ input{
     height: 35px; 
 }
 
+input:invalid{
+    border: .01rem solid rgb(165, 35, 52);
+}
 
+input:valid:required{
+    border: 1px solid rgb(37, 35, 5);
+}
 
 input[type=text]:hover,
 input[type=password]:hover,
