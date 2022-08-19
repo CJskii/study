@@ -196,6 +196,7 @@ input{
     height: 35px; 
 }
 
+
 input:invalid{
     border: .01rem solid rgb(165, 35, 52);
 }
@@ -220,20 +221,6 @@ input[type=tel]:focus {
     box-shadow: 0 0 25px rgba(109, 29, 112, 0.5);
   }
 
-  input + span {
-    position: relative;
-  }
-  
-  input:required + span::after {
-    font-size: 0.7rem;
-    position: absolute;
-    content: "required";
-    color: rgb(168, 43, 43);
-    background: transparent;
-    padding: 5px 10px;
-    top: -2.4rem;
-    left: 17.5rem;
-  }
 
 
 /*SUBMIT*/
