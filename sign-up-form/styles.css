@@ -206,15 +206,26 @@ input[required]:invalid:not(:placeholder-shown){
     
 }
 
-/*
-input:invalid{
-    border: .01rem solid rgb(165, 35, 52);
-}
+input + span {
+    position: relative;
+  }
+  
+  input + span::before {
+    position: absolute;
+    right: -1rem;
+    top: -1.3rem;
+  }
+  
+  input:invalid + span::before {
+    content: '✖';
+    color: rgba(252, 10, 10, 0.6);
+  }
+  
+  input:valid + span::before {
+    content: '✓';
+    color: rgba(0, 128, 0, 0.8);
+  }
 
-input:valid:required{
-    border: 1px solid rgb(37, 35, 5);
-}
-*/
 input[type=text]:hover,
 input[type=password]:hover,
 input[type=email]:hover,
