@@ -66,11 +66,13 @@
                             <label for="pwd">Password*</label>
                             <input type="password" id="pwd" name="pwd" placeholder="Enter your password..." required>
                             <span></span>
+                            <span class="message hidden"></span>
                         </div>
                         <div class="input-wrapper">
                             <label for="pwd-confirm">Confirm Password*</label>
                             <input type="password" id="pwd-confirm" name="pwd-confirm" placeholder="Confirm your password..." required>
                             <span></span>
+                            <span class="message hidden"></span>
                         </div>
                     </div>
                 </form>
@@ -80,13 +82,41 @@
             <!-- SUBMIT -->
             <div class="button-container">
                 <div class="button-wrapper">
-                    <button type="submit">Create Account</button>
+                    <button onclick=confirmPassword() type="submit">Create Account</button>
                     <p>Already have an account?<span><a>Log in</a></span></p>
                 </div>
             </div>
             <!-- //SUBMIT -->
         </div>
-
     </div>
+    <script>
+            
+            
+        function confirmPassword(){
+            let password = document.getElementById("pwd").value
+            let confirmPassword = document.getElementById("pwd-confirm").value
+            let messages = document.querySelectorAll(".message")
+            if (password.length < 8 || confirmPassword.length < 8){
+                messages.forEach((span) => span.textContent = "Your password need at least 8 characters")
+                messages.forEach((span => span.classList.remove("no-match")))
+                messages.forEach((span => span.classList.remove("hidden")))
+                messages.forEach((span => span.classList.remove("match")))
+                messages.forEach((span => span.classList.add("no-match")))
+            } else if (password != 0){
+                if (password == confirmPassword){
+                    messages.forEach((span) => span.textContent = "Passwords match")
+                    messages.forEach((span => span.classList.remove("no-match")))
+                    messages.forEach((span => span.classList.remove("hidden")))
+                    messages.forEach((span => span.classList.add("match")))
+                } else if (password != confirmPassword){
+                    messages.forEach((span) => span.textContent = "Passwords do not match")
+                    messages.forEach((span => span.classList.remove("match")))
+                    messages.forEach((span => span.classList.remove("hidden")))
+                    messages.forEach((span => span.classList.add("no-match")))
+                }
+            }
+        }
+
+    </script>
 </body>
 </html>
