@@ -216,6 +216,13 @@ input + span {
     top: -1.3rem;
   }
   
+  input[type=password] + span::after, .message{
+    
+    color: red;
+    font-size: .6rem;
+    padding: .3rem
+  }
+
   input:invalid + span::before {
     content: '✖';
     color: rgba(252, 10, 10, 0.6);
@@ -225,6 +232,18 @@ input + span {
     content: '✓';
     color: rgba(0, 128, 0, 0.8);
   }
+
+.hidden{
+    display: none;
+}
+
+.match{
+    color: rgba(0, 128, 0, 0.8)
+}
+
+.no-match{
+    color: rgba(252, 10, 10, 0.6);
+}
 
 input[type=text]:hover,
 input[type=password]:hover,
@@ -241,7 +260,6 @@ input[type=tel]:focus {
     border:1px solid rgba(255, 217, 0, 0.76);
     box-shadow: 0 0 25px rgba(109, 29, 112, 0.5);
   }
-
 
 
 /*SUBMIT*/
