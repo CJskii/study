@@ -188,15 +188,25 @@ label{
 input{
     appearance: none;
     background-color: rgba(23, 8, 37, 0.295);
-    color: white;
+    color: rgba(223, 198, 224, 0.9);
     border-radius: 10px;
     border: 1px solid rgb(37, 35, 5);
     font-family: 'Josefin', sans-serif;
     font-size: .8rem;
     height: 35px; 
+    padding-left: .4rem;
 }
 
+::placeholder{
+    color:rgba(133, 117, 134, 0.548);
+}
 
+input[required]:invalid:not(:placeholder-shown){
+    border: 1px solid red;
+    
+}
+
+/*
 input:invalid{
     border: .01rem solid rgb(165, 35, 52);
 }
@@ -204,7 +214,7 @@ input:invalid{
 input:valid:required{
     border: 1px solid rgb(37, 35, 5);
 }
-
+*/
 input[type=text]:hover,
 input[type=password]:hover,
 input[type=email]:hover,
