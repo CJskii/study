@@ -64,13 +64,13 @@
                     <div class="row3">
                         <div class="input-wrapper">
                             <label for="pwd">Password*</label>
-                            <input type="password" id="pwd" name="pwd" placeholder="Enter your password..." required>
+                            <input type="password" id="pwd" name="pwd" class="password" placeholder="Enter your password..." required>
                             <span></span>
                             <span class="message hidden"></span>
                         </div>
                         <div class="input-wrapper">
                             <label for="pwd-confirm">Confirm Password*</label>
-                            <input type="password" id="pwd-confirm" name="pwd-confirm" placeholder="Confirm your password..." required>
+                            <input type="password" id="pwd-confirm" name="pwd-confirm" class="password" placeholder="Confirm your password..." required>
                             <span></span>
                             <span class="message hidden"></span>
                         </div>
@@ -82,7 +82,7 @@
             <!-- SUBMIT -->
             <div class="button-container">
                 <div class="button-wrapper">
-                    <button onclick=confirmPassword() type="submit">Create Account</button>
+                    <button type="submit">Create Account</button>
                     <p>Already have an account?<span><a>Log in</a></span></p>
                 </div>
             </div>
@@ -90,13 +90,15 @@
         </div>
     </div>
     <script>
-            
-            
-        function confirmPassword(){
+          
+        let inputs = document.querySelectorAll(".password")
+        inputs.forEach(input => input.addEventListener('input', checkPassword));
+        function checkPassword(){
             let password = document.getElementById("pwd").value
             let confirmPassword = document.getElementById("pwd-confirm").value
             let messages = document.querySelectorAll(".message")
             if (password.length < 8 || confirmPassword.length < 8){
+                console.log(inputs)
                 messages.forEach((span) => span.textContent = "Your password need at least 8 characters")
                 messages.forEach((span => span.classList.remove("no-match")))
                 messages.forEach((span => span.classList.remove("hidden")))
