@@ -1,7 +1,7 @@
 const img = document.querySelector("img");
 const btn = document.querySelector("button");
 
-document.addEventListener("DOMContentLoaded", retrieveData("cats"));
+document.addEventListener("DOMContentLoaded", getData("cats"));
 
 btn.addEventListener("click", function () {
   const inpt = document.querySelector("input");
@@ -10,9 +10,25 @@ btn.addEventListener("click", function () {
   if (query == null || query == "") {
     return;
   } else {
-    retrieveData(query);
+    getData(query);
   }
 });
+
+async function getData(query) {
+  const response = await fetch(
+    `https://api.giphy.com/v1/gifs/translate?api_key=YOUR_API_KEY&s=${query}`
+  );
+  response
+    .json()
+    .then(function (response) {
+      img.src = response.data.images.original.url;
+    })
+    .catch(function (err) {
+      console.log(err);
+    });
+}
+
+/*
 
 function retrieveData(query) {
   fetch(
@@ -35,3 +51,5 @@ function retrieveData(query) {
 function populateData(data) {
   img.src = data;
 }
+
+*/
