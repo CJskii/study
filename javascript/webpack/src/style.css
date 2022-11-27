@@ -11,4 +11,13 @@
     color: red;
     background: url('./icon.png');
     font-family: 'MyFont';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
