@@ -36,13 +36,11 @@ class LinkedList {
       head = head.nextNode;
       count++;
     }
-    console.log(count);
     return count;
   }
 
   head() {
     // return value of first node in the list
-    console.log(this.HEAD);
     return this.HEAD[0];
   }
 
@@ -52,13 +50,18 @@ class LinkedList {
     while (head.nextNode != null) {
       head = head.nextNode;
     }
-    console.log(head.value);
+    return head;
   }
 
   at(index) {
     // return node at given index
     let head = this.HEAD;
     let count = 0;
+    while (head.nextNode != null || head.value != null) {
+      if (count == index) return head;
+      count++;
+      head = head.nextNode;
+    }
   }
 
   pop() {
@@ -98,24 +101,13 @@ class LinkedList {
 
   toString() {
     // return linked list objects as strings, so it can be printed in console
+    let head = this.HEAD;
+    let string = "";
+    while (head != null) {
+      string += `(${head.value}) => `;
+      head = head.nextNode;
+    }
+    string += "(null)";
+    return string;
   }
 }
-
-const node = new Node("1");
-
-const list = new LinkedList([1, 4, 5, 9, 10]);
-//list.append("2");
-
-const lista = new LinkedList("1");
-lista.append("2");
-lista.append("3");
-lista.append("9");
-lista.prepend("0");
-//lista.size();
-//lista.head();
-//lista.at("2");
-//lista.pop();
-//lista.tail();
-//console.log(lista.contains("9"));
-console.log(lista.find("9"));
-console.log(lista.at("4"));
