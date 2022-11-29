@@ -59,6 +59,7 @@ class LinkedList {
     let count = 0;
     while (head.nextNode != null || head.value != null) {
       if (count == index) return head;
+      if (count != index && head.nextNode == null) return null;
       count++;
       head = head.nextNode;
     }
@@ -109,5 +110,31 @@ class LinkedList {
     }
     string += "(null)";
     return string;
+  }
+
+  insertAt(value, index) {
+    // insert new node at given index
+    const newNode = new Node(value);
+    let node = this.at(index);
+    let previousNode = this.at(index - 1);
+    if (node != null && previousNode == null) return this.prepend(value);
+    else if (node == null && previousNode != null) return this.append(value);
+    else if (previousNode == null) return console.log("Wrong index");
+    else if (node != null && previousNode != null) {
+      previousNode.nextNode = newNode;
+      newNode.nextNode = node;
+    }
+  }
+
+  removeAt(index) {
+    // remove node at given index
+    let node = this.at(index);
+    let previousNode = this.at(index - 1);
+    let head = this.HEAD;
+    if (node == null) return console.log("Wrong index");
+    else if (node.nextNode == null) return this.pop();
+    else if (previousNode == null) return (this.HEAD = head.nextNode);
+    else if (previousNode != null)
+      return (previousNode.nextNode = node.nextNode);
   }
 }
