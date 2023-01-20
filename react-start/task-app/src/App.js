@@ -14,14 +14,9 @@ class App extends Component {
     };
 
     this.deleteTask = this.deleteTask.bind(this);
-
-    this.editTask = this.handleEditTask.bind(this);
-
-    this.editing = this.state.editing;
-
-    this.changeTask = this.handleChangeInTask.bind(this);
-
-    this.saveTask = this.saveEditedTask.bind(this);
+    this.handleEditTask = this.handleEditTask.bind(this);
+    this.handleSaveTask = this.handleSaveTask.bind(this);
+    this.handleChangeInTask = this.handleChangeInTask.bind(this);
   }
 
   changeHandler = (e) => {
@@ -60,12 +55,23 @@ class App extends Component {
     });
   };
 
-  handleChangeInTask = () => {};
+  handleSaveTask = (id) => {
+    this.setState({
+      editing: null,
+    });
+  };
 
-  saveEditedTask = () => {};
+  handleChangeInTask = (e, id) => {
+    this.setState((prevState) => {
+      let tasks = this.state.tasks;
+      let task = tasks.find((task) => task.id === id);
+      task.text = e.target.value;
+      return { tasks };
+    });
+  };
 
   render() {
-    const { task, tasks } = this.state;
+    const { task, tasks, editing } = this.state;
 
     return (
       <div className="container">
@@ -81,14 +87,16 @@ class App extends Component {
             Add task
           </button>
         </form>
-        <Overview
-          deleteTask={this.deleteTask}
-          editTask={this.editTask}
-          editing={this.editing}
-          handleEditTask={this.changeTask}
-          saveTask={this.saveTask}
-          tasks={tasks}
-        />
+        <div className="task-wrapper">
+          <Overview
+            deleteTask={this.deleteTask}
+            handleEditTask={this.handleEditTask}
+            editing={editing}
+            handleSaveTask={this.handleSaveTask}
+            handleChangeInTask={this.handleChangeInTask}
+            tasks={tasks}
+          />
+        </div>
       </div>
     );
   }
